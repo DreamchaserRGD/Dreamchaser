@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fallen/Fallen_Graphic/Loch.png" type="Texture" id=1]
+[ext_resource path="res://Fallen/Fallen_Skript/Falle_Loch.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 121.364, 120.09 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Falle_Loch" type="Area2D" parent="."]
+scale = Vector2( 0.0819453, 0.0669839 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Falle_Loch"]
+shape = SubResource( 1 )
+
+[node name="Loch" type="Sprite" parent="Falle_Loch/CollisionShape2D"]
+texture = ExtResource( 1 )
+
+[connection signal="body_entered" from="Falle_Loch" to="Falle_Loch" method="trapEnter"]
