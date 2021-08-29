@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fallen/Baerenfalle_Geschlossen_Test.png" type="Texture" id=1]
+[ext_resource path="res://Fallen/Baerenfalle_Geschlossen.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 50.4266, 32.7139 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 7.54211, 6.92741 )
+scale = Vector2( 0.15, 0.2 )
+shape = SubResource( 1 )
+
+[node name="BaerenFalle_Geschlossen" type="Sprite" parent="CollisionShape2D"]
+position = Vector2( 0.588623, 19.4235 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
