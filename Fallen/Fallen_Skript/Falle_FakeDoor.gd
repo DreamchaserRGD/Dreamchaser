@@ -5,7 +5,7 @@ func trapEnter( area ):
 	if area.get_name() == "Player":
 		print("FakeDoor getriggert!");
 		yield(get_tree().create_timer(2), "timeout")
-		var Loch = preload("res://Fallen/Loch.tscn")
+		var Loch = preload("res://Fallen/Fallen_Prefab/Loch.tscn")
 		var loch = Loch.instance()
 		var world = get_tree().current_scene
 		world.add_child(loch)
