@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Hit- and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World/Druckplatte.png" type="Texture" id=2]
+[ext_resource path="res://PlayerInteraction/druckplatte.gd" type="Script" id=3]
+
+[node name="druckplatte" type="Sprite"]
+position = Vector2( 40.3669, 137.156 )
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Hurtbox" type="Area2D" parent="." instance=ExtResource( 1 )]
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
