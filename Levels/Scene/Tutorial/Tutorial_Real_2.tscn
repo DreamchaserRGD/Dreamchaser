@@ -1,17 +1,17 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://World/DirtTileset.png" type="Texture" id=1]
 [ext_resource path="res://Levels/TestTextures/Bett.png" type="Texture" id=2]
 [ext_resource path="res://Player/Player.png" type="Texture" id=3]
 [ext_resource path="res://World/GrassBackground.png" type="Texture" id=4]
-[ext_resource path="res://Levels/TestScript/UnlockedDoor.gd" type="Script" id=5]
+[ext_resource path="res://Levels/TestScript/Bett/Bett_Tutorial/Bett_Tutorial_To_Dream.gd" type="Script" id=5]
 [ext_resource path="res://Levels/TestTextures/MauerTileset.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Fließen.png" type="Texture" id=7]
 [ext_resource path="res://Assets/MauerTileset.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Wooden Floor.png" type="Texture" id=9]
 [ext_resource path="res://Levels/TestTextures/Black.png" type="Texture" id=10]
 [ext_resource path="res://Player/Player.gd" type="Script" id=11]
-[ext_resource path="res://Levels/TestScript/Bett.gd" type="Script" id=12]
+[ext_resource path="res://Levels/TestScript/Bett/Bett_Level2/Bett_Level2_To_Real1.gd" type="Script" id=12]
 [ext_resource path="res://Levels/TestTextures/Door_unlocked.png" type="Texture" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -110,7 +110,55 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [sub_resource type="ConvexPolygonShape2D" id=32]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
-[sub_resource type="TileSet" id=33]
+[sub_resource type="ConvexPolygonShape2D" id=33]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=34]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=35]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=36]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=37]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=38]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=39]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=40]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=41]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=42]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=43]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=44]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=45]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=46]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=47]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=48]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="TileSet" id=49]
 1/name = "MauerTileset.png 1"
 1/texture = ExtResource( 6 )
 1/tex_offset = Vector2( 0, 0 )
@@ -346,9 +394,106 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 33 )
 2/shape_one_way = false
-2/shape_one_way_margin = 0.0
-2/shapes = [  ]
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 3, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 33 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 3, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 34 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 35 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 36 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 37 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 38 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 39 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 40 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 41 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 42 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 3, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 43 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 44 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 3 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 45 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 3 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 46 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 3 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 47 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 3, 3 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 48 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 2/z_index = 0
 3/name = "MauerTileset.png 3"
 3/texture = ExtResource( 8 )
@@ -374,7 +519,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 3/shapes = [  ]
 3/z_index = 0
 
-[sub_resource type="TileSet" id=34]
+[sub_resource type="TileSet" id=50]
 0/name = "DirtTileset.png 0"
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
@@ -441,17 +586,14 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 3/shapes = [  ]
 3/z_index = 0
 
-[sub_resource type="CapsuleShape2D" id=35]
+[sub_resource type="CapsuleShape2D" id=51]
 radius = 3.75608
 height = 3.88115
 
-[sub_resource type="RectangleShape2D" id=36]
+[sub_resource type="RectangleShape2D" id=52]
 extents = Vector2( 160.407, 160.805 )
 
-[node name="Level1" type="Node2D"]
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="CurrentScene" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 156.256, 84.7067 )
@@ -468,13 +610,13 @@ __meta__ = {
 }
 
 [node name="StoneWallTileMap" type="TileMap" parent="."]
-tile_set = SubResource( 33 )
+tile_set = SubResource( 49 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( -131066, 0, 3, -1, 2, 4, -65536, 2, 196609, -65535, 2, 196609, -65534, 2, 196609, -65533, 2, 196609, -65532, 2, 196609, -65531, 2, 196609, -65530, 2, 196609, -65529, 2, 196609, -65528, 2, 196609, -65527, 2, 196609, -65526, 2, 7, 65535, 2, 65539, 10, 2, 65539, 131071, 2, 65539, 65539, 0, 131074, 65546, 2, 65539, 196607, 2, 65539, 131074, 0, 131074, 131080, 0, 131072, 131082, 2, 65539, 262143, 2, 65539, 196618, 2, 65539, 327679, 2, 65539, 262154, 2, 65539, 393215, 2, 196612, 327680, 2, 196609, 327681, 2, 196609, 327682, 2, 196609, 327683, 2, 196609, 327684, 2, 196609, 327685, 2, 196609, 327686, 2, 196609, 327687, 2, 196609, 327688, 2, 196609, 327689, 2, 196609, 327690, 2, 196615, 458754, 0, 196610 )
 
 [node name="DirtPathTileMap" type="TileMap" parent="."]
-tile_set = SubResource( 34 )
+tile_set = SubResource( 50 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 8, 0, 0, 8, 0, 0 )
 format = 1
@@ -483,7 +625,7 @@ tile_data = PoolIntArray( -262149, 3, 0, -262148, 3, 0, -262147, 3, 0, -262146, 
 [node name="Toutorial_Real2" type="YSort" parent="."]
 
 [node name="Player" type="KinematicBody2D" parent="Toutorial_Real2"]
-position = Vector2( 58.1318, 133.977 )
+position = Vector2( 86.9416, 55.2177 )
 collision_mask = 31
 script = ExtResource( 11 )
 __meta__ = {
@@ -497,7 +639,7 @@ hframes = 60
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Toutorial_Real2/Player"]
 position = Vector2( 0, 9 )
 rotation = -1.5708
-shape = SubResource( 35 )
+shape = SubResource( 51 )
 
 [node name="Bett" type="Sprite" parent="Toutorial_Real2"]
 position = Vector2( 53.0121, 57.0407 )
@@ -505,10 +647,10 @@ scale = Vector2( 0.119745, 0.15174 )
 texture = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="Toutorial_Real2/Bett"]
-script = ExtResource( 12 )
+script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Toutorial_Real2/Bett/Area2D"]
-shape = SubResource( 36 )
+shape = SubResource( 52 )
 
 [node name="Door_unlocked" type="Sprite" parent="Toutorial_Real2"]
 position = Vector2( 300.819, 55.8424 )
@@ -518,10 +660,11 @@ texture = ExtResource( 13 )
 [node name="Area2D" type="Area2D" parent="Toutorial_Real2/Door_unlocked"]
 position = Vector2( -1.38794, 4.77328 )
 scale = Vector2( 1.04223, 1.00787 )
-script = ExtResource( 5 )
+script = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Toutorial_Real2/Door_unlocked/Area2D"]
 position = Vector2( 1.56274, -1.84927 )
-shape = SubResource( 36 )
+shape = SubResource( 52 )
 
 [connection signal="body_entered" from="Toutorial_Real2/Bett/Area2D" to="Toutorial_Real2/Bett/Area2D" method="enterTrigger"]
+[connection signal="body_entered" from="Toutorial_Real2/Door_unlocked/Area2D" to="Toutorial_Real2/Door_unlocked/Area2D" method="enterTrigger"]
