@@ -5,7 +5,7 @@ func _ready():
 	$VBoxContainer/StartButton.grab_focus()
 
 func _on_StartButton_pressed():
-	get_tree().change_scene("res://Levels/Scene/Tutorial/Tutorial_Real_1.tscn")
+	get_tree().change_scene_to(load('res://Levels/Scene/Tutorial/Tutorial_Real_1.tscn'))
 
 #func _on_OptionButton_pressed():
 	#Options Menu einfuegen

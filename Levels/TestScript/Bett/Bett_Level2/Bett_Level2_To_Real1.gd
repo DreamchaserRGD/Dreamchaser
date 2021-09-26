@@ -1,7 +1,9 @@
 extends Area2D
 
+var root
 
 func enterTrigger(body):
 	if body.get_name() == "Player":
-		print("Starte Level Tutorial Real 2")
-		$Tutorial.transition_to_Real_2()#Muss ich noch weiter machen
+		print("Starte Level 2 Real")
+		root = get_tree().get_root().get_node("SceneManager")
+		root.transition_to_Level2_Real()

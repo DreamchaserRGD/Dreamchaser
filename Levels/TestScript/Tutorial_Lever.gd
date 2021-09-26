@@ -5,5 +5,5 @@ var root
 func enterTrigger(body):
 	if body.get_name() == "Player":
 		print("Hebel betätigt!")
-		root = get_tree().get_root().get_node("Tutorial")
+		root = get_tree().get_root().get_node("SceneManager")
 		root.leverGetPulled()
