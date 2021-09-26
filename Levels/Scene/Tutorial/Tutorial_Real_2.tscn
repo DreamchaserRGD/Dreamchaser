@@ -13,7 +13,7 @@
 [ext_resource path="res://Player/Camera2D.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Levels/TestScript/Bett/Bett_Level2/Bett_Level2_To_Real1.gd" type="Script" id=12]
 [ext_resource path="res://Levels/TestTextures/Door_unlocked.png" type="Texture" id=13]
-[ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Enemies/Bat/Bat.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
