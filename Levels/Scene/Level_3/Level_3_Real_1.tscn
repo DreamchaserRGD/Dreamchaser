@@ -48,7 +48,6 @@ func check_for_door():
 		var bed = level.find_node(G.next_level_bed)
 		player.position = bed.position
 		G.next_level_bed = null
-
 "
 
 [node name="Game" type="Node2D"]
