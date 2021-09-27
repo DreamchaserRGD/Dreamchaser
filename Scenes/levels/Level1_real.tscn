@@ -540,12 +540,12 @@ level_number = 2
 door_name = "Door"
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 47.6451, 33.8641 )
+position = Vector2( 135.897, 158.456 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Bat" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 12.9477, 39.7127 )
+position = Vector2( 12.9477, 86.4345 )
 
 [node name="Crap" parent="Enemies" instance=ExtResource( 1 )]
 position = Vector2( 309.862, 45.2749 )
