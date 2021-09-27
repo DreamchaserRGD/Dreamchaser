@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Godot- Proj 1"
-run/main_scene="res://Levels/Scene/Menu.tscn"
+run/main_scene="res://Scenes/levels/Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
