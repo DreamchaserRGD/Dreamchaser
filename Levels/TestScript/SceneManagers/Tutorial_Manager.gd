@@ -2,12 +2,21 @@ extends Node2D
 
 const Scene_Real2 = preload("res://Levels/Scene/Tutorial/Tutorial_Real_2.tscn")
 const Scene_Dream = preload("res://Levels/Scene/Tutorial/Tutorial_Dream.tscn")
-const Scene_Level2 = preload("res://Levels/Scene/Level_2/Leve_2_Real_1.tscn")
+const Scene_Level2_Real = preload("res://Levels/Scene/Level_2/Level_2_Real_1.tscn")
+const Scene_Level2_Dream = preload("res://Levels/Scene/Level_2/Level_2_Dream_1.tscn")
+const Scene_Level3_Real = preload("res://Levels/Scene/Level_3/Level_3_Real_1.tscn")
+const Scene_Level3_Dream = preload("res://Levels/Scene/Level_3/Level_3_Dream_1.tscn")
 
-var real_1 = false;
-var real_2 = false;
-var dream = false;
-var level2 = false;
+enum {
+	Level1_Real, 
+	Level1_Dream, 
+	Level2_Real,
+	Level2_Dream
+	Level3_Real,
+	Level3_Dream
+}
+
+var state = Level1_Real;
 
 var childName
 
@@ -27,49 +36,50 @@ func setObjects():
 
 func transition_to_Real():
 	setObjects()
-	dream = false;
 	if leverPulled:
-		#real_1 = false;
-		real_2 = true;
+		state = Level1_Real
 		transitionScreen.transition()
-	#else:
-		#real_1 = true;
-		#real_2 = false;
-		#transitionScreen.transition()
 
 func transition_to_Dream():
 	setObjects()
-	#real_1 = false;
-	real_2 = false;
-	dream = true;
+	state = Level1_Dream
 	transitionScreen.transition()
 
 func transition_to_Level2_Dream():
 	setObjects()
-	#real_1 = false;
-	real_2 = false;
-	dream = true;
+	state = Level2_Dream
 	transitionScreen.transition()
 
 func transition_to_Level2_Real():
 	setObjects()
-	real_2 = false;
-	dream = false;
+	state = Level2_Real
 	transitionScreen.transition()
 
+func transition_to_level3_Real():
+	setObjects()
+	state = Level3_Real
+	transitionScreen.transition()
+
+func transition_to_level3_Dream():
+	setObjects()
+	state = Level3_Dream
+	transitionScreen.transition()
+
+
 func _on_TransitionScreen_transitioned():
-	#if real_1:
-	#	var Scene_Real1 = preload(res://Levels/Scene/Tutorial/Tutorial_Real_1.tscn)
-	#	root.get_child(1).queue_free()
-	#	root.add_child(Scene_Real1.instance())
-	if real_2:
-		root.get_child(1).queue_free()
-		root.add_child(Scene_Real2.instance())
-	elif dream:
-		root.get_child(1).queue_free()
-		root.add_child(Scene_Dream.instance())
-	elif level2:
-		root.get_child(1).queue_free()
-		root.add_child(Scene_Level2.instance())
-	else:
-		print("Fehler: Level nicht gefunden!");
+	match state:
+		Level1_Real:
+			root.get_child(1).queue_free()
+			root.add_child(Scene_Real2.instance())
+		Level1_Dream:
+			root.get_child(1).queue_free()
+			root.add_child(Scene_Dream.instance())
+		Level2_Real:
+			root.add_child(Scene_Level2_Real.instance())
+			root.get_child(1).queue_free()
+		Level3_Real:
+			root.add_child(Scene_Level3_Real.instance())
+			root.get_child(1).queue_free()
+		Level3_Dream:
+			root.add_child(Scene_Level3_Dream.instance())
+			root.get_child(1).queue_free()

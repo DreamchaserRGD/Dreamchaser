@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://DialogBox.gd" type="Script" id=1]
+
+[node name="DialogBox" type="ColorRect"]
+margin_top = 130.339
+margin_right = 340.0
+margin_bottom = 184.283
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+dialogPath = "res://Textboxes/Dialog0.json"
+
+[node name="Name" type="RichTextLabel" parent="."]
+margin_right = 340.0
+margin_bottom = 54.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="RichTextLabel" parent="."]
+margin_top = 14.0
+margin_right = 340.0
+margin_bottom = 54.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Indicator" type="Polygon2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Indicator"]
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
