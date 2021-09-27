@@ -1,17 +1,16 @@
 [gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://Assets/Bett.png" type="Texture" id=2]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Levels/TestScript/Bett/Bett_Tutorial/Bett_Tutorial_To_Dream.gd" type="Script" id=5]
+[ext_resource path="res://Levels/TestScript/Bett/Bett_Level2/Bett_Level2_To_Real1.gd" type="Script" id=1]
+[ext_resource path="res://Levels/TestScript/Bett/Bett_Tutorial/Bett_Tutorial_To_Dream.gd" type="Script" id=2]
+[ext_resource path="res://Player/Camera2D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Bett.png" type="Texture" id=5]
 [ext_resource path="res://Levels/TestTextures/MauerTileset.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Fließen.png" type="Texture" id=7]
 [ext_resource path="res://Assets/MauerTileset.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Wooden Floor.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Black.png" type="Texture" id=10]
-[ext_resource path="res://Player/Camera2D.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Levels/TestScript/Bett/Bett_Level2/Bett_Level2_To_Real1.gd" type="Script" id=12]
-[ext_resource path="res://Assets/Tiles Split New/Tür_Offen.png" type="Texture" id=13]
-
+[ext_resource path="res://Assets/Tiles Split New/Tür_Offen.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Black.png" type="Texture" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -410,7 +409,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 2/shapes = [  ]
 2/z_index = 0
 3/name = "Black.png 3"
-3/texture = ExtResource( 10 )
+3/texture = ExtResource( 11 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 0, 0, 16, 16 )
@@ -438,7 +437,7 @@ __meta__ = {
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 161.137, 34.2603 )
 scale = Vector2( 3.14645, 2.05638 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 
 [node name="StoneWallTileMap" type="TileMap" parent="."]
 tile_set = SubResource( 3 )
@@ -458,12 +457,12 @@ tile_data = PoolIntArray( -65538, 3, 0, -65537, 3, 0, -131072, 3, 0, -131071, 3,
 [node name="Door_unlocked" type="Sprite" parent="Objects"]
 position = Vector2( 304.115, 40.3574 )
 scale = Vector2( 0.591061, 0.744354 )
-texture = ExtResource( 13 )
+texture = ExtResource( 10 )
 
 [node name="Area2D" type="Area2D" parent="Objects/Door_unlocked"]
 position = Vector2( 0.046875, 3.42321 )
 scale = Vector2( 0.158069, 0.176166 )
-script = ExtResource( 12 )
+script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Door_unlocked/Area2D"]
 position = Vector2( 1.56274, -1.84927 )
@@ -472,21 +471,21 @@ shape = SubResource( 5 )
 [node name="Bett" type="Sprite" parent="Objects"]
 position = Vector2( 23.7538, 46.4545 )
 scale = Vector2( 1.56693, 1.75675 )
-texture = ExtResource( 2 )
+texture = ExtResource( 5 )
 
 [node name="Area2D" type="Area2D" parent="Objects/Bett"]
 position = Vector2( -1.67321, -3.81792 )
 scale = Vector2( 0.0855712, 0.0915644 )
-script = ExtResource( 5 )
+script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bett/Area2D"]
 position = Vector2( 39.7829, 61.5201 )
 shape = SubResource( 6 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
+[node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 68.6944, 49.9933 )
 
-[node name="Camera2D" parent="Player" instance=ExtResource( 11 )]
+[node name="Camera2D" parent="Player" instance=ExtResource( 3 )]
 position = Vector2( 0, 0 )
 
 [connection signal="body_entered" from="Objects/Door_unlocked/Area2D" to="Objects/Door_unlocked/Area2D" method="enterTrigger"]
