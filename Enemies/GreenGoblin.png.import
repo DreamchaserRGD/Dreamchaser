@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Kiste.png-d1173b0d6969200707b3fd95c246619f.stex"
+path="res://.import/GreenGoblin.png-e0e8ca724009d2a2708206700cb0de19.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles Split/Kiste.png"
-dest_files=[ "res://.import/Kiste.png-d1173b0d6969200707b3fd95c246619f.stex" ]
+source_file="res://Enemies/GreenGoblin.png"
+dest_files=[ "res://.import/GreenGoblin.png-e0e8ca724009d2a2708206700cb0de19.stex" ]
 
 [params]
 

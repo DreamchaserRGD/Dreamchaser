@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Lampe.png-1001524d224793d4f7250cb72a09a93e.stex"
+path="res://.import/WhiteGoblin.png-84fb78e5737ed82926ce218d36ccfc4e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles Split/Lampe.png"
-dest_files=[ "res://.import/Lampe.png-1001524d224793d4f7250cb72a09a93e.stex" ]
+source_file="res://Enemies/WhiteGoblin.png"
+dest_files=[ "res://.import/WhiteGoblin.png-84fb78e5737ed82926ce218d36ccfc4e.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Schalter Rechts.png-531e6b746aa728f02ec5d06a2cdb68f8.stex"
+path="res://.import/BearTrap_Sprite.png-64fc7c6912ac863e42debfd322011f5b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles Split/Schalter Rechts.png"
-dest_files=[ "res://.import/Schalter Rechts.png-531e6b746aa728f02ec5d06a2cdb68f8.stex" ]
+source_file="res://Assets/Fallen/BearTrap_Sprite.png"
+dest_files=[ "res://.import/BearTrap_Sprite.png-64fc7c6912ac863e42debfd322011f5b.stex" ]
 
 [params]
 
