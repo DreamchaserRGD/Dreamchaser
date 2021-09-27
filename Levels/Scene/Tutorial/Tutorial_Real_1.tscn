@@ -3,7 +3,7 @@
 [ext_resource path="res://Levels/TestTextures/MauerTileset.png" type="Texture" id=1]
 [ext_resource path="res://World/DirtTileset.png" type="Texture" id=2]
 [ext_resource path="res://Levels/TestTextures/Bett.png" type="Texture" id=3]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/GrassBackground.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Obstacles.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Fließen.png" type="Texture" id=7]
@@ -11,12 +11,13 @@
 [ext_resource path="res://Assets/Wooden Floor.png" type="Texture" id=9]
 [ext_resource path="res://Levels/TestTextures/Black.png" type="Texture" id=10]
 [ext_resource path="res://Levels/TestScript/Bett/Bett_Tutorial/Bett_Tutorial_To_Dream.gd" type="Script" id=11]
-[ext_resource path="res://Player/Camera2D.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Levels/Anim/Transition/fade_to_normal.tres" type="Animation" id=13]
 [ext_resource path="res://Levels/TestScript/SceneManagers/Tutorial_Manager.gd" type="Script" id=14]
 [ext_resource path="res://Levels/TestScript/TransitionScreen.gd" type="Script" id=15]
 [ext_resource path="res://Enemies/Bat/Bat.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Enemies/Crab/Crap.tscn" type="PackedScene" id=17]
+
 
 [sub_resource type="Animation" id=1]
 tracks/0/type = "value"

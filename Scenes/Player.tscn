@@ -114,23 +114,24 @@ start_node = "Idle"
 [sub_resource type="AnimationNodeStateMachinePlayback" id=15]
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 175.181, 75.5093 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -13 )
 texture = ExtResource( 1 )
 hframes = 60
 frame = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 9 )
+position = Vector2( 0, -4 )
 rotation = -1.5708
 shape = SubResource( 1 )
 
 [node name="KameraLink" type="RemoteTransform2D" parent="."]
+position = Vector2( 0, -14 )
 remote_path = NodePath("../../../Camera2D")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
