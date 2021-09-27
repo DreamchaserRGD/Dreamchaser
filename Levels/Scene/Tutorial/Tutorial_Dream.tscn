@@ -9,10 +9,11 @@
 [ext_resource path="res://Levels/TestTextures/Bett.png" type="Texture" id=7]
 [ext_resource path="res://Assets/MauerTileset.png" type="Texture" id=8]
 [ext_resource path="res://Player/Player.png" type="Texture" id=9]
-[ext_resource path="res://Player/Player.gd" type="Script" id=10]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Obstacles.png" type="Texture" id=11]
 [ext_resource path="res://Levels/TestScript/Tutorial_Lever.gd" type="Script" id=12]
 [ext_resource path="res://Levels/TestScript/Bett/Bett_Tutorial/Bett_Tutorial_To_Real.gd" type="Script" id=13]
+[ext_resource path="res://Player/Camera2D.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -610,14 +611,10 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 } ]
 4/z_index = 0
 
-[sub_resource type="CapsuleShape2D" id=52]
-radius = 3.75608
-height = 3.88115
-
-[sub_resource type="RectangleShape2D" id=53]
+[sub_resource type="RectangleShape2D" id=52]
 extents = Vector2( 160.407, 160.805 )
 
-[sub_resource type="RectangleShape2D" id=54]
+[sub_resource type="RectangleShape2D" id=53]
 extents = Vector2( 21.9314, 24.8213 )
 
 [node name="CurrentScene" type="Node2D"]
@@ -662,22 +659,11 @@ tile_data = PoolIntArray( -262149, 3, 0, -262148, 3, 0, -262147, 3, 0, -262146, 
 
 [node name="Toutorial_Dream" type="YSort" parent="."]
 
-[node name="Player" type="KinematicBody2D" parent="Toutorial_Dream"]
-position = Vector2( 84.9715, 54.5173 )
-collision_mask = 31
-script = ExtResource( 10 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Player" parent="Toutorial_Dream" instance=ExtResource( 10 )]
+position = Vector2( 84.821, 62.1142 )
 
-[node name="Sprite" type="Sprite" parent="Toutorial_Dream/Player"]
-texture = ExtResource( 9 )
-hframes = 60
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Toutorial_Dream/Player"]
-position = Vector2( 0, 9 )
-rotation = -1.5708
-shape = SubResource( 52 )
+[node name="Camera2D" parent="Toutorial_Dream" instance=ExtResource( 14 )]
+position = Vector2( 84.821, 62.1142 )
 
 [node name="Bett" type="Sprite" parent="Toutorial_Dream"]
 position = Vector2( 53.0121, 57.0407 )
@@ -688,7 +674,7 @@ texture = ExtResource( 7 )
 script = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Toutorial_Dream/Bett/Area2D"]
-shape = SubResource( 53 )
+shape = SubResource( 52 )
 
 [node name="Hebel" type="Area2D" parent="Toutorial_Dream"]
 position = Vector2( 288.632, 102.29 )
@@ -696,7 +682,7 @@ script = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Toutorial_Dream/Hebel"]
 position = Vector2( -0.790466, -4.98914 )
-shape = SubResource( 54 )
+shape = SubResource( 53 )
 
 [node name="Sprite" type="Sprite" parent="Toutorial_Dream/Hebel"]
 position = Vector2( 76.6634, 285.568 )
