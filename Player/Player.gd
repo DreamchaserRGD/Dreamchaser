@@ -3,8 +3,14 @@ extends KinematicBody2D
 const FRICTION = 500
 const ACCELERATION = 500
 const MAX_SPEED = 100
+const GRAVITY = 15
+const JUMP = 400
 
 var velocity = Vector2.ZERO
+
+onready var animationPlayer = $AnimationPlayer
+onready var animationTree = $AnimationPlayer/AnimationTree
+onready var animationState = animationTree.get("parameters/playback")
 
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO
@@ -13,8 +19,17 @@ func _physics_process(delta):
 	input_vector = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
+		animationTree.set("parameters/Idle/blend_position", input_vector)
+		animationTree.set("parameters/Movement/blend_position", input_vector)
+		animationState.travel("Movement")
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
 	else:
+		animationState.travel("Idle") 
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	
+	if (Input.is_action_just_pressed("ui_up")):
+		velocity.y -= JUMP
+	
+	
+	velocity.y += GRAVITY
 	velocity = move_and_slide(velocity)
