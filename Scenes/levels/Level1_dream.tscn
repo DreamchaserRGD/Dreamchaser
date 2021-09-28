@@ -123,3 +123,6 @@ position = Vector2( -166.102, 55.6046 )
 
 [node name="Crap" parent="Enemies" instance=ExtResource( 1 )]
 position = Vector2( -67.3068, 43.156 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.227451, 0.223529, 0.329412, 1 )
