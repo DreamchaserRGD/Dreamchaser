@@ -1,34 +1,13 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Tiles Split New/Tür_Offen.png" type="Texture" id=1]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Node2D
-
-signal enter_door
-
-export(int) var level_number
-export(String) var door_name
-
-onready var area = $Area2D
-
-func _ready():
-	pass
-
-func _physics_process(delta):
-	for body in area.get_overlapping_bodies():
-		if body.name == \"Player\" and Input.is_action_just_pressed(\"ui_up\"):
-			G.next_level_door = door_name
-			G.next_level_number = level_number
-			G.real_or_dream = \"real\"
-			emit_signal(\"enter_door\")
-"
+[ext_resource path="res://Scripts/Doors.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 13.9671, 4.04074 )
 
 [node name="Door" type="Node2D"]
-script = SubResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Tür_Offen" type="Sprite" parent="."]
 position = Vector2( -0.190628, -31.6489 )
