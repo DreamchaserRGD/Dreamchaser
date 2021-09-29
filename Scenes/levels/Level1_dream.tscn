@@ -135,7 +135,7 @@ position = Vector2( -166.102, 55.6046 )
 position = Vector2( -67.3068, 43.156 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.0431373, 0.0431373, 0.0509804, 1 )
+color = Color( 0, 0, 0, 1 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( 94.5966, 158.351 )
