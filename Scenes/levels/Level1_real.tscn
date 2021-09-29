@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/Crap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Scenes/Bed.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Tiles Split New/Lampe.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/Fackel.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=14]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Walls.png 0"
@@ -132,6 +133,9 @@ door_name = "Door"
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 135.897, 158.456 )
 
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Bat" parent="Enemies" instance=ExtResource( 4 )]
@@ -158,3 +162,10 @@ texture = ExtResource( 10 )
 
 [node name="Fackel" parent="." instance=ExtResource( 13 )]
 position = Vector2( 125.052, 108.665 )
+
+[node name="Camera2D" parent="." instance=ExtResource( 14 )]
+position = Vector2( 135.897, 158.456 )
+limit_left = -225
+limit_top = 0
+limit_right = 530
+limit_bottom = 385

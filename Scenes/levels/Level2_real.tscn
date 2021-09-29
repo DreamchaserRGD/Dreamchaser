@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Crap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Fließen.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Walls.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Wooden Floor.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Walls.png 0"
@@ -118,7 +119,7 @@ level_number = 1
 door_name = "Door"
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 158.889, 95.8427 )
+position = Vector2( 161.695, 128.955 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
@@ -130,3 +131,10 @@ position = Vector2( 43.1567, 56.413 )
 
 [node name="Crap" parent="Enemies" instance=ExtResource( 1 )]
 position = Vector2( 262.716, 58.5182 )
+
+[node name="Camera2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( 161.695, 128.955 )
+limit_left = -250
+limit_top = 0
+limit_right = 600
+limit_bottom = 450

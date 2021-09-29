@@ -1,12 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Crap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Bed.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Bat.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Wooden Floor.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Fließen.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Walls.png" type="Texture" id=8]
+[ext_resource path="res://Assets/light.png" type="Texture" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Walls.png 0"
@@ -114,7 +116,15 @@ bed_name = "Bed"
 dream_or_real = "real"
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 96.3804, 158.351 )
+position = Vector2( 94.5966, 158.351 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Light2D2" type="Light2D" parent="Player"]
+texture = ExtResource( 9 )
+texture_scale = 0.62
+energy = 1.26
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -125,4 +135,11 @@ position = Vector2( -166.102, 55.6046 )
 position = Vector2( -67.3068, 43.156 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.227451, 0.223529, 0.329412, 1 )
+color = Color( 0.0431373, 0.0431373, 0.0509804, 1 )
+
+[node name="Camera2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( 94.5966, 158.351 )
+limit_left = -215
+limit_top = 0
+limit_right = 540
+limit_bottom = 385
