@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Crap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/Fließen.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Walls.png" type="Texture" id=8]
 [ext_resource path="res://Assets/light.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Fackel.tscn" type="PackedScene" id=10]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Walls.png 0"
@@ -114,6 +115,9 @@ position = Vector2( 15.0661, 158.902 )
 level_number = 1
 bed_name = "Bed"
 dream_or_real = "real"
+
+[node name="Fackel" parent="Objects" instance=ExtResource( 10 )]
+position = Vector2( 193.807, 91.0695 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 94.5966, 158.351 )
