@@ -3,7 +3,6 @@
 [ext_resource path="res://Assets/Tiles/Wandfackel_anim.png" type="Texture" id=1]
 [ext_resource path="res://Assets/light.png" type="Texture" id=2]
 
-
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 64, 64 )
@@ -44,7 +43,7 @@ animations = [ {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 8 )
-frame = 6
+frame = 2
 playing = true
 
 [node name="Light2D2" type="Light2D" parent="."]
@@ -53,3 +52,4 @@ scale = Vector2( 0.934992, 0.857482 )
 texture = ExtResource( 2 )
 texture_scale = 0.62
 energy = 1.26
+shadow_enabled = true
