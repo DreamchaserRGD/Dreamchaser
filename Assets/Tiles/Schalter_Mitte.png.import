@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tür_Zu.png-19f18e56d8782d0902ad65e1b63d55d9.stex"
+path="res://.import/Schalter_Mitte.png-2be4afc2071e5326591d432c1f4845db.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles Split New/Tür_Zu.png"
-dest_files=[ "res://.import/Tür_Zu.png-19f18e56d8782d0902ad65e1b63d55d9.stex" ]
+source_file="res://Assets/Tiles/Schalter_Mitte.png"
+dest_files=[ "res://.import/Schalter_Mitte.png-2be4afc2071e5326591d432c1f4845db.stex" ]
 
 [params]
 

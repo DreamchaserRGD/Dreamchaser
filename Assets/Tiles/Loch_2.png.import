@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Schalter_Links.png-de3e9afa2d2b9da4db478bcb4acbd6b5.stex"
+path="res://.import/Loch_2.png-9d4d645325e8ce327ef5335faf898844.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles Split New/Schalter_Links.png"
-dest_files=[ "res://.import/Schalter_Links.png-de3e9afa2d2b9da4db478bcb4acbd6b5.stex" ]
+source_file="res://Assets/Tiles/Loch_2.png"
+dest_files=[ "res://.import/Loch_2.png-9d4d645325e8ce327ef5335faf898844.stex" ]
 
 [params]
 

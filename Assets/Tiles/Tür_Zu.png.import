@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Druckplatte_1.png-5db63a5e8b741af514203256edbd1d2f.stex"
+path="res://.import/Tür_Zu.png-c398927a2f238fa9ff05624244779068.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles Split New/Druckplatte_1.png"
-dest_files=[ "res://.import/Druckplatte_1.png-5db63a5e8b741af514203256edbd1d2f.stex" ]
+source_file="res://Assets/Tiles/Tür_Zu.png"
+dest_files=[ "res://.import/Tür_Zu.png-c398927a2f238fa9ff05624244779068.stex" ]
 
 [params]
 

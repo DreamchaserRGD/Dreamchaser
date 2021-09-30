@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bogen_Seite2.png-70d0f09d8ebcfd51994e05f02bbe67c2.stex"
+path="res://.import/Lampe.png-5ca275905f0604e3dee699c183c4aa82.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles Split New/Bogen_Seite2.png"
-dest_files=[ "res://.import/Bogen_Seite2.png-70d0f09d8ebcfd51994e05f02bbe67c2.stex" ]
+source_file="res://Assets/Tiles/Lampe.png"
+dest_files=[ "res://.import/Lampe.png-5ca275905f0604e3dee699c183c4aa82.stex" ]
 
 [params]
 

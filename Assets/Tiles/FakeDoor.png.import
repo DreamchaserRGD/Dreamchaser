@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Stacheln.png-f5c4fb9b1a2965b932e1797c367fc4d9.stex"
+path="res://.import/FakeDoor.png-784f845a72a0f9e6b23423ebb3c18375.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles Split New/Stacheln.png"
-dest_files=[ "res://.import/Stacheln.png-f5c4fb9b1a2965b932e1797c367fc4d9.stex" ]
+source_file="res://Assets/Tiles/FakeDoor.png"
+dest_files=[ "res://.import/FakeDoor.png-784f845a72a0f9e6b23423ebb3c18375.stex" ]
 
 [params]
 

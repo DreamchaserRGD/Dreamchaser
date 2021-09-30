@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Fass.png-88af13779ce1e4708026a557153fbc8d.stex"
+path="res://.import/Falltür.png-dfe24bac8e533ad601aed51d0a2abcaa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles Split New/Fass.png"
-dest_files=[ "res://.import/Fass.png-88af13779ce1e4708026a557153fbc8d.stex" ]
+source_file="res://Assets/Tiles/Falltür.png"
+dest_files=[ "res://.import/Falltür.png-dfe24bac8e533ad601aed51d0a2abcaa.stex" ]
 
 [params]
 

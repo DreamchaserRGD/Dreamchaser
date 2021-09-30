@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tor.png-3989bc14bf2ba5bf2292786fb24bd44a.stex"
+path="res://.import/Schalter_Rechts.png-d705aba2f2e780f3aaba7451d7e6ab27.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles Split New/Tor.png"
-dest_files=[ "res://.import/Tor.png-3989bc14bf2ba5bf2292786fb24bd44a.stex" ]
+source_file="res://Assets/Tiles/Schalter_Rechts.png"
+dest_files=[ "res://.import/Schalter_Rechts.png-d705aba2f2e780f3aaba7451d7e6ab27.stex" ]
 
 [params]
 

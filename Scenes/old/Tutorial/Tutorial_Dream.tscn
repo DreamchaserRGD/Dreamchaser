@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Levels/TestScript/Tutorial_Lever.gd" type="Script" id=1]
 [ext_resource path="res://Levels/TestScript/Bett/Bett_Tutorial/Bett_Tutorial_To_Real.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Tiles Split New/Schalter_Rechts.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Tiles/Schalter_Rechts.png" type="Texture" id=3]
 [ext_resource path="res://Player/Camera2D.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Bett.png" type="Texture" id=6]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/MauerTileset.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Wooden Floor.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Black.png" type="Texture" id=11]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )

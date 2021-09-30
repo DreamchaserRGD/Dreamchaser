@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Kiste.png-20d073a0772f9ee2b24ee4e9f1470b7b.stex"
+path="res://.import/Wandfackel_anim.png-0fe5fc9a330ea543986ed3b6d2fcafb8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles Split New/Kiste.png"
-dest_files=[ "res://.import/Kiste.png-20d073a0772f9ee2b24ee4e9f1470b7b.stex" ]
+source_file="res://Assets/Tiles/Wandfackel_anim.png"
+dest_files=[ "res://.import/Wandfackel_anim.png-0fe5fc9a330ea543986ed3b6d2fcafb8.stex" ]
 
 [params]
 

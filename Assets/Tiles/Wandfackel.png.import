@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Schalter_Mitte.png-752f92b6543926f33bee088b3de4dc93.stex"
+path="res://.import/Wandfackel.png-6f9dd52fd31f1e8bd5d1f0b0074ca00f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles Split New/Schalter_Mitte.png"
-dest_files=[ "res://.import/Schalter_Mitte.png-752f92b6543926f33bee088b3de4dc93.stex" ]
+source_file="res://Assets/Tiles/Wandfackel.png"
+dest_files=[ "res://.import/Wandfackel.png-6f9dd52fd31f1e8bd5d1f0b0074ca00f.stex" ]
 
 [params]
 
