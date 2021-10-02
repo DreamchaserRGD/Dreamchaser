@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/MainMenue.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Menu.png" type="Texture" id=2]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -10,25 +11,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Black" type="Sprite" parent="."]
-position = Vector2( 171.157, 90.3252 )
-scale = Vector2( 0.356193, 0.277739 )
+[node name="Menu" type="Sprite" parent="."]
+position = Vector2( 170.538, 92.0231 )
+scale = Vector2( 0.177819, 0.169579 )
+texture = ExtResource( 2 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.534
 anchor_top = 0.5
 anchor_right = 0.534
 anchor_bottom = 0.5
-margin_left = -2.5818
-margin_top = -0.822083
-margin_right = 60.4182
-margin_bottom = 67.1779
+margin_left = -58.56
+margin_top = 22.0
+margin_right = 34.44
+margin_bottom = 90.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
-margin_right = 63.0
+margin_right = 93.0
 margin_bottom = 20.0
 focus_neighbour_top = NodePath("../QuitButton")
 focus_neighbour_bottom = NodePath("../OptionButton")
@@ -36,7 +38,7 @@ text = "Start"
 
 [node name="OptionButton" type="Button" parent="VBoxContainer"]
 margin_top = 24.0
-margin_right = 63.0
+margin_right = 93.0
 margin_bottom = 44.0
 focus_neighbour_top = NodePath("../StartButton")
 focus_neighbour_bottom = NodePath("../QuitButton")
@@ -44,7 +46,7 @@ text = "Options"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 margin_top = 48.0
-margin_right = 63.0
+margin_right = 93.0
 margin_bottom = 68.0
 focus_neighbour_top = NodePath("../OptionButton")
 focus_neighbour_bottom = NodePath("../StartButton")
