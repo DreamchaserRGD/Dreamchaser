@@ -5,7 +5,7 @@ signal leverPulled
 
 func _process(delta):
 	if Input.is_action_just_pressed("interact") and inArea:
-		$AnimationPlayer.play("Schalter_Anim")
+		get_parent().get_child(2).play("Schalter_Anim")
 
 func enterTrigger(area):
 	if area.get_name() == "Player":
@@ -17,4 +17,4 @@ func leaveTrigger(area):
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Schalter_Anim":
-		emit_signal("leverPulled")
+		G.lever_pulled

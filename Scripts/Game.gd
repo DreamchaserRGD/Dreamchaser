@@ -35,11 +35,13 @@ func _on_enter_something():
 	get_tree().reload_current_scene()
 
 func check_for_door():
+	print("check doors")
 	if G.next_level_door != null:
 		var door = level.find_node(G.next_level_door)
 		player.position = door.position
 		G.next_level_door = null
 	elif G.next_level_bed != null:
+		print("check hoes")
 		var bed = level.find_node(G.next_level_bed)
 		player.position = bed.position
 		G.next_level_bed = null

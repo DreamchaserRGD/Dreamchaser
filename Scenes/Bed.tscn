@@ -18,7 +18,8 @@ func _ready():
 
 func _physics_process(delta):
 	for body in area.get_overlapping_bodies():
-		if body.name == \"Player\" and Input.is_action_just_pressed(\"ui_up\"):
+		if body.name == \"Player\" and Input.is_action_just_pressed(\"interact\"):
+			print(\"Test\")
 			G.next_level_bed = bed_name
 			G.next_level_number = level_number
 			G.real_or_dream = dream_or_real

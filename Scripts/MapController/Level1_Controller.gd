@@ -25,3 +25,8 @@ func _on_Door_OtherWorld_triggerPoint():
 	TextBox = textBox_Other.instance()
 	level = get_tree().get_root()
 	level.add_child(TextBox)
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "Schalter_Anim":
+		print("nix")

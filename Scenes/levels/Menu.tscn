@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/MainMenue.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Menu.png" type="Texture" id=2]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -11,18 +12,19 @@ __meta__ = {
 }
 
 [node name="Black" type="Sprite" parent="."]
-position = Vector2( 171.157, 90.3252 )
-scale = Vector2( 0.356193, 0.277739 )
+position = Vector2( 170.316, 91.0259 )
+scale = Vector2( 0.176918, 0.167955 )
+texture = ExtResource( 2 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.534
 anchor_top = 0.5
 anchor_right = 0.534
 anchor_bottom = 0.5
-margin_left = -2.5818
-margin_top = -0.822083
-margin_right = 60.4182
-margin_bottom = 67.1779
+margin_left = -44.5792
+margin_top = 16.3968
+margin_right = 18.4208
+margin_bottom = 84.3968
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -33,6 +35,8 @@ margin_bottom = 20.0
 focus_neighbour_top = NodePath("../QuitButton")
 focus_neighbour_bottom = NodePath("../OptionButton")
 text = "Start"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="VBoxContainer/StartButton"]
 
 [node name="OptionButton" type="Button" parent="VBoxContainer"]
 margin_top = 24.0
