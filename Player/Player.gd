@@ -1,10 +1,10 @@
 extends KinematicBody2D
 
-const FRICTION = 500
-const ACCELERATION = 500
+const FRICTION = 900
+const ACCELERATION = 960
 const MAX_SPEED = 100
-const GRAVITY = 15
-const JUMP = 400
+const GRAVITY = 700
+const JUMP_FORCE = 250
 
 var velocity = Vector2.ZERO
 
@@ -12,25 +12,53 @@ onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationPlayer/AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 
+
+func _ready():
+	animationTree.active = true
+	
 func _physics_process(delta):
-	var input_vector = Vector2.ZERO
-	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	input_vector = input_vector.normalized()
+	velocity.y += GRAVITY * delta
+	var input_x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	
-	if input_vector != Vector2.ZERO:
-		animationTree.set("parameters/Idle/blend_position", input_vector)
-		animationTree.set("parameters/Movement/blend_position", input_vector)
-		animationState.travel("Movement")
-		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
-	else:
-		animationState.travel("Idle") 
-		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-	
-	if (Input.is_action_just_pressed("ui_up")):
-		velocity.y -= JUMP
+	if is_on_floor():
+		if Input.is_action_pressed("ui_up"):
+			velocity.y -= JUMP_FORCE
 		
+	if input_x < 0:
+		input_x = -1
+	elif input_x > 0:
+		input_x = 1
+		
+	var orig_y = velocity.y
+	if input_x != 0:
+		set_blend_position(input_x)
+		if is_on_floor():
+			animationState.travel("Movement")
+		else:
+			if orig_y < 0:
+				animationState.travel("JumpLoop")
+			else:
+				animationState.travel("FallLoop")
+		velocity = velocity.move_toward(Vector2(input_x, 0) * MAX_SPEED, ACCELERATION * delta)
+		
+	else:
+		if is_on_floor():
+			animationState.travel("Idle")
+		else:
+			if orig_y < 0:
+				animationState.travel("JumpLoop")
+			else:
+				animationState.travel("FallLoop")
+		velocity = velocity.move_toward(Vector2(0, 0), FRICTION * delta)
+
+	velocity.y = orig_y
+	velocity.y = clamp(velocity.y, -350, 350)
+	velocity = move_and_slide(velocity, Vector2.UP)
 	
-	
-	velocity.y += GRAVITY
-	velocity = move_and_slide(velocity)
+func set_blend_position(input_x: int) -> void:
+	animationTree.set("parameters/Idle/blend_position", input_x)
+	animationTree.set("parameters/Movement/blend_position", input_x)
+	animationTree.set("parameters/Jump/blend_position", input_x)
+	animationTree.set("parameters/JumpLoop/blend_position", input_x)
+	animationTree.set("parameters/Fall/blend_position", input_x)
+	animationTree.set("parameters/FallLoop/blend_position", input_x)
