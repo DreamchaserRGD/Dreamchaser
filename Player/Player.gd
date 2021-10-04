@@ -6,6 +6,8 @@ const MAX_SPEED = 100
 const GRAVITY = 700
 const JUMP_FORCE = 250
 
+signal enter_bed
+
 var velocity = Vector2.ZERO
 var stats = PlayerStats
 
@@ -20,10 +22,10 @@ func _ready():
 
 func _physics_process(delta):
 	velocity.y += GRAVITY * delta
-	var input_x = Input.get_action_strength("right") - Input.get_action_strength("left")
+	var input_x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	
 	if is_on_floor():
-		if Input.is_action_pressed("jump"):
+		if Input.is_action_pressed("ui_up"):
 			velocity.y -= JUMP_FORCE
 		
 	if input_x < 0:
@@ -68,13 +70,12 @@ func set_blend_position(input_x: int) -> void:
 # On Player gets damage
 func _on_Hurtbox_area_entered(area):
 	stats.health -= 1
-	# Change Scene to current Scene
-	var door = get_tree().find_node(G.next_level_door)
-	var player = get_tree().find_node("Player")
-	player.position = door.position
+	print("damage")
+	emit_signal("enter_bed")
 
 # On Death
 func resetAfterDeath():
 	stats.health = 4
-	# Change Scene to beginning of Level
-	get_tree().change_scene_to(load('res://Scenes/levels/Menu.tscn'))
+	print("damagetod")
+	G.real_or_dream = "real"
+	emit_signal("enter_bed")

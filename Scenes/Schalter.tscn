@@ -24,6 +24,7 @@ scale = Vector2( 1.18581, 1.25395 )
 texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 2.0
 anims/Schalter_Anim = ExtResource( 1 )
 
 [connection signal="body_entered" from="Area2D" to="." method="enterTrigger"]

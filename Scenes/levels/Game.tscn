@@ -1,55 +1,41 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Music and Sounds/Theme.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Scripts/Game.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/TransitionScreen.gd" type="Script" id=3]
 
-[sub_resource type="GDScript" id=1]
-script/source = "extends Node2D
+[sub_resource type="Animation" id=1]
+resource_name = "fade_to_black"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
 
-onready var in_game = $InGame
-
-var player = null
-
-var level = null
-
-func _ready():
-	add_level()
-	connect_to_doors()
-	check_for_door()
-	pass
-
-func add_level():
-	level = load(str(\"res://Scenes/levels/level\", G.next_level_number, \"_\" , G.real_or_dream, \".tscn\")).instance()
-	in_game.add_child(level)
-	
-	player = level.find_node(\"Player\")
-
-func connect_to_doors():
-	print(\"lets go\")
-	for child in level.find_node(\"Objects\").get_children():
-		if child.name.begins_with(\"Door\"):
-			child.connect(\"enter_door\", self, \"_on_enter\")
-		elif child.name.begins_with(\"Bed\"):
-			child.connect(\"enter_bed\", self, \"_on_enter\")
-		elif child.name.begins_with(\"Lever\"):
-			print(\"signal empfangen\")
-			child.connect(\"pulled_lever\", self, \"_on_enter_something\")
-
-func _on_enter():
-	get_tree().reload_current_scene()
-
-func check_for_door():
-	if G.next_level_door != null:
-		var door = level.find_node(G.next_level_door)
-		player.position = door.position
-		G.next_level_door = null
-	elif G.next_level_bed != null:
-		var bed = level.find_node(G.next_level_bed)
-		player.position = bed.position
-		G.next_level_bed = null
-"
+[sub_resource type="Animation" id=2]
+resource_name = "fade_to_normal"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
 
 [node name="Game" type="Node2D"]
-script = SubResource( 1 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -60,3 +46,24 @@ __meta__ = {
 pause_mode = 2
 stream = ExtResource( 1 )
 autoplay = true
+
+[node name="TransitionSystem" type="CanvasLayer" parent="."]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="TransitionSystem"]
+margin_left = -3144.0
+margin_top = -2190.0
+margin_right = 3336.0
+margin_bottom = 2209.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TransitionSystem/ColorRect"]
+playback_speed = 2.0
+anims/fade_to_black = SubResource( 1 )
+anims/fade_to_normal = SubResource( 2 )
+
+[connection signal="transitioned" from="TransitionSystem" to="." method="_on_CanvasLayer_transitioned"]
+[connection signal="animation_finished" from="TransitionSystem/ColorRect/AnimationPlayer" to="TransitionSystem" method="_on_AnimationPlayer_animation_finished"]

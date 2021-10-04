@@ -1,17 +1,17 @@
 extends Node2D
 
 onready var in_game = $InGame
-onready var camera = $Camera2D
 
 var player = null
 
 var level = null
+var transitionSys
 
 func _ready():
+	transitionSys = in_game.get_parent().get_child(2)
 	add_level()
 	connect_to_doors()
 	check_for_door()
-	put_camera_on_player()
 	pass
 
 func add_level():
@@ -20,24 +20,16 @@ func add_level():
 	
 	player = level.find_node("Player")
 
-func put_camera_on_player():
-	remove_child(camera)
-	player.add_child(camera)
-
 func connect_to_doors():
-	print("lets go")
+	player.connect("enter_bed", self, "_on_enter_something")
 	for child in level.find_node("Objects").get_children():
 		if child.name.begins_with("Door"):
 			child.connect("enter_door", self, "_on_enter_something")
 		elif child.name.begins_with("Bed"):
 			child.connect("enter_bed", self, "_on_enter_something")
-		elif child.name.begins_with("Lever"):
-			print("signal empfangen")
-			child.connect("pulled_lever", self, "_on_enter_something")
 
 func _on_enter_something():
-	print("restart")
-	get_tree().reload_current_scene()
+	transitionSys.transition()
 
 func check_for_door():
 	if G.next_level_door != null:
@@ -47,4 +39,9 @@ func check_for_door():
 	elif G.next_level_bed != null:
 		var bed = level.find_node(G.next_level_bed)
 		player.position = bed.position
-		G.next_level_bed = null
+		if G.real_or_dream == "real":
+			G.next_level_bed = null
+
+
+func _on_CanvasLayer_transitioned():
+	get_tree().reload_current_scene()

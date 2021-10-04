@@ -201,7 +201,7 @@ polygon = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [node name="Level6" type="Node2D"]
 
 [node name="Camera2D" parent="." instance=ExtResource( 4 )]
-position = Vector2( 63.7145, 72.5849 )
+position = Vector2( 64.1594, 72.14 )
 limit_left = -25
 limit_top = -25
 limit_right = 575
@@ -248,8 +248,8 @@ dream_or_real = "dream"
 
 [node name="Door" parent="Objects" instance=ExtResource( 10 )]
 position = Vector2( 25.8642, 79.5093 )
-level_number = 1
-door_name = "Door"
+level_number = 5
+door_name = "Door2"
 is_always_open = "yes"
 
 [node name="Door2" parent="Objects" instance=ExtResource( 10 )]
@@ -267,7 +267,7 @@ position = Vector2( 262.425, 110.434 )
 lever_number = 1
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
-position = Vector2( 63.7145, 72.5849 )
+position = Vector2( 64.1594, 72.14 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")

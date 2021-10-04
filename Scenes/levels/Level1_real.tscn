@@ -212,7 +212,7 @@ is_always_open = "no"
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Camera2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( 57.7077, 98.3918 )
+position = Vector2( 63.7927, 103.948 )
 limit_left = -215
 limit_top = 0
 limit_right = 700
@@ -228,7 +228,7 @@ script = ExtResource( 10 )
 shape = SubResource( 11 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 57.7077, 98.3918 )
+position = Vector2( 63.7927, 103.948 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")

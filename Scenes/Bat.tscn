@@ -75,22 +75,22 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=9]
-radius = 4.13419
+radius = 11.3365
 
 [node name="Bat" type="KinematicBody2D"]
 collision_layer = 16
 script = SubResource( 1 )
 
+[node name="Hitbox" parent="." instance=ExtResource( 2 )]
+collision_layer = 0
+collision_mask = 2
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 8 )
-animation = "sleep"
+animation = "fly"
 playing = true
 offset = Vector2( 0, -12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -7 )
+position = Vector2( -0.462998, -9.84408 )
 shape = SubResource( 9 )
-
-[node name="Hitbox" parent="." instance=ExtResource( 2 )]
-collision_layer = 0
-collision_mask = 2

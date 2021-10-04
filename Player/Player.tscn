@@ -313,7 +313,7 @@ graph_offset = Vector2( -53, 114.1 )
 [sub_resource type="AnimationNodeStateMachinePlayback" id=40]
 
 [sub_resource type="CapsuleShape2D" id=41]
-radius = 5.71896
+radius = 8.03091
 height = 13.7963
 
 [node name="Player" type="KinematicBody2D"]
@@ -323,6 +323,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( -2, -14 )
 rotation = -0.000657842
 shape = SubResource( 1 )

@@ -1,7 +1,7 @@
 extends Node
 # initializes and throws out signals for health change
 
-export(int) var max_health = 1
+export(int) var max_health = 4
 var health = max_health setget set_health
 
 signal no_health
