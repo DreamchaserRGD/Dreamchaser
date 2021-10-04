@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/MainMenue.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Menu.png" type="Texture" id=2]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Music and Sounds/Menu.mp3" type="AudioStream" id=3]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -53,9 +53,9 @@ focus_neighbour_top = NodePath("../OptionButton")
 focus_neighbour_bottom = NodePath("../StartButton")
 text = "Quit"
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 102.836, 180.8 )
-script = null
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionButton" to="." method="_on_OptionButton_pressed"]
