@@ -81,16 +81,18 @@ radius = 11.3365
 collision_layer = 16
 script = SubResource( 1 )
 
-[node name="Hitbox" parent="." instance=ExtResource( 2 )]
-collision_layer = 0
-collision_mask = 2
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 8 )
 animation = "fly"
+frame = 3
 playing = true
 offset = Vector2( 0, -12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.462998, -9.84408 )
 shape = SubResource( 9 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 2 )]
+position = Vector2( -2.57951, -5.15904 )
+collision_layer = 0
+collision_mask = 2
