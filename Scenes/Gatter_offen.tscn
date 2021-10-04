@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Tiles/Bogen Offen.png" type="Texture" id=1]
+
+[node name="Gatter_offen" type="Node2D"]
+
+[node name="Bogen Offen" type="Sprite" parent="."]
+position = Vector2( 24.1808, 23.6343 )
+texture = ExtResource( 1 )

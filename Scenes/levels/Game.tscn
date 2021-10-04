@@ -1,12 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Music and Sounds/Theme.mp3" type="AudioStream" id=1]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
 onready var in_game = $InGame
-onready var camera = $Camera2D
 
 var player = null
 
@@ -16,7 +15,6 @@ func _ready():
 	add_level()
 	connect_to_doors()
 	check_for_door()
-	put_camera_on_player()
 	pass
 
 func add_level():
@@ -25,18 +23,18 @@ func add_level():
 	
 	player = level.find_node(\"Player\")
 
-func put_camera_on_player():
-	remove_child(camera)
-	player.add_child(camera)
-
 func connect_to_doors():
+	print(\"lets go\")
 	for child in level.find_node(\"Objects\").get_children():
 		if child.name.begins_with(\"Door\"):
-			child.connect(\"enter_door\", self, \"_on_enter_something\")
+			child.connect(\"enter_door\", self, \"_on_enter\")
 		elif child.name.begins_with(\"Bed\"):
-			child.connect(\"enter_bed\", self, \"_on_enter_something\")
+			child.connect(\"enter_bed\", self, \"_on_enter\")
+		elif child.name.begins_with(\"Lever\"):
+			print(\"signal empfangen\")
+			child.connect(\"pulled_lever\", self, \"_on_enter_something\")
 
-func _on_enter_something():
+func _on_enter():
 	get_tree().reload_current_scene()
 
 func check_for_door():
@@ -56,7 +54,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Camera2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( 138.63, 73.3904 )
-
 [node name="InGame" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+pause_mode = 2
+stream = ExtResource( 1 )
+autoplay = true

@@ -25,13 +25,18 @@ func put_camera_on_player():
 	player.add_child(camera)
 
 func connect_to_doors():
+	print("lets go")
 	for child in level.find_node("Objects").get_children():
 		if child.name.begins_with("Door"):
 			child.connect("enter_door", self, "_on_enter_something")
 		elif child.name.begins_with("Bed"):
 			child.connect("enter_bed", self, "_on_enter_something")
+		elif child.name.begins_with("Lever"):
+			print("signal empfangen")
+			child.connect("pulled_lever", self, "_on_enter_something")
 
 func _on_enter_something():
+	print("restart")
 	get_tree().reload_current_scene()
 
 func check_for_door():
