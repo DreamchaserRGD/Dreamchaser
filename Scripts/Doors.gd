@@ -4,6 +4,9 @@ signal enter_door
 
 export(int) var level_number
 export(String) var door_name
+export(String) var is_always_open
+
+var locked = true;
 
 var door_open = preload("res://Assets/Tiles/Tür_Offen.png")
 var door_closed = preload("res://Assets/Tiles/Tür_Zu.png")
@@ -11,23 +14,30 @@ var door_closed = preload("res://Assets/Tiles/Tür_Zu.png")
 onready var DoorTexture = get_node("DoorTexture")
 onready var area = $Area2D
 
-func switch_texture(num):
-	if  (num == 1):
+func switch_texture():
+	if is_always_open != "yes":
+		if  (G.lever_pulled):
+			DoorTexture.set_texture(door_open)
+			locked = false;
+		else:
+			DoorTexture.set_texture(door_closed)
+			locked = true;
+	else:
 		DoorTexture.set_texture(door_open)
-	if  (num == 2):
-		DoorTexture.set_texture(door_closed)
+		locked = false;
 
 func _ready():
-	pass
+	switch_texture()
 
 func _physics_process(delta):
 	for body in area.get_overlapping_bodies():
 		if body.name == "Player" and Input.is_action_just_pressed("interact"):
-			G.next_level_door = door_name
-			G.next_level_number = level_number
-			G.real_or_dream = "real"
-			emit_signal("enter_door")
-		if body.name == "Player" and Input.is_action_just_pressed("ui_up"):
-			switch_texture(1)
-		if body.name == "Player" and Input.is_action_just_pressed("ui_down"):
-			switch_texture(2)
+			if !locked:
+				G.next_level_door = door_name
+				G.next_level_number = level_number
+				G.real_or_dream = "real"
+				G.lever_pulled = false;
+				G.lever_pulled_Gatter1 = false;
+				G.lever_pulled_Gatter2 = false;
+				G.lever_pulled_Gatter3 = false;
+				emit_signal("enter_door")

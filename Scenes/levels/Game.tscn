@@ -22,11 +22,15 @@ func add_level():
 	player = level.find_node(\"Player\")
 
 func connect_to_doors():
+	print(\"lets go\")
 	for child in level.find_node(\"Objects\").get_children():
 		if child.name.begins_with(\"Door\"):
 			child.connect(\"enter_door\", self, \"_on_enter\")
 		elif child.name.begins_with(\"Bed\"):
 			child.connect(\"enter_bed\", self, \"_on_enter\")
+		elif child.name.begins_with(\"Lever\"):
+			print(\"signal empfangen\")
+			child.connect(\"pulled_lever\", self, \"_on_enter_something\")
 
 func _on_enter():
 	get_tree().reload_current_scene()

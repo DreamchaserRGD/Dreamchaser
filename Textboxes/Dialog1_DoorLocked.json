@@ -1,5 +1,5 @@
 [
 	{"Name":"Spieler", "Text":"Die Tür ist verschlossen!"},
 	{"Name":"Spieler", "Text":"Wie komme ich nur hier raus?"},
-	{"Name":"Spieler", "Text":"Ich bin aufeinmal so müde, ich lege mich glaube ich erst einmal hin."}
+	{"Name":"Spieler", "Text":"Ich bin aufeinmal so müde, \n ich lege mich glaube ich erst einmal hin."}
 ]

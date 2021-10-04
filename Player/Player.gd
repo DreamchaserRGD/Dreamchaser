@@ -7,6 +7,7 @@ const GRAVITY = 700
 const JUMP_FORCE = 250
 
 var velocity = Vector2.ZERO
+var stats = PlayerStats
 
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationPlayer/AnimationTree
@@ -15,7 +16,8 @@ onready var animationState = animationTree.get("parameters/playback")
 
 func _ready():
 	animationTree.active = true
-	
+	stats.connect("no_health", self, "resetAfterDeath")
+
 func _physics_process(delta):
 	velocity.y += GRAVITY * delta
 	var input_x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -62,3 +64,17 @@ func set_blend_position(input_x: int) -> void:
 	animationTree.set("parameters/JumpLoop/blend_position", input_x)
 	animationTree.set("parameters/Fall/blend_position", input_x)
 	animationTree.set("parameters/FallLoop/blend_position", input_x)
+
+# On Player gets damage
+func _on_Hurtbox_area_entered(area):
+	stats.health -= 1
+	# Change Scene to current Scene
+	var door = get_tree().find_node(G.next_level_door)
+	var player = get_tree().find_node("Player")
+	player.position = door.position
+
+# On Death
+func resetAfterDeath():
+	stats.health = 4
+	# Change Scene to beginning of Level
+	get_tree().change_scene_to(load('res://Scenes/levels/Menu.tscn'))
