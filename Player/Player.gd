@@ -20,10 +20,10 @@ func _ready():
 
 func _physics_process(delta):
 	velocity.y += GRAVITY * delta
-	var input_x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	var input_x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	
 	if is_on_floor():
-		if Input.is_action_pressed("ui_up"):
+		if Input.is_action_pressed("jump"):
 			velocity.y -= JUMP_FORCE
 		
 	if input_x < 0:
